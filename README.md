@@ -1,2 +1,2 @@
 # recurse_app
-This includes a sample python program and input file
+This repository contains a sample python file orf_reader.py and a sample input file sample_sequences.fasta
