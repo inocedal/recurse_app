@@ -4,7 +4,7 @@
 
 # first open the file
 try:
-    file_name = open('/Users/isabel/Desktop/sample_sequences.fasta','r')
+    file_name = open('sample_sequences.fasta','r')
 except IOError:
     print ("Can't find your file")
 
