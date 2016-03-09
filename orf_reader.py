@@ -111,6 +111,6 @@ output_file.close()
 
 # print stats on orf lengths
 print ('\nThe longest orf is for %s: %s (length = %i amino acids)' % (orf_max_ID,longest_proteins[orf_max_ID],orf_max_length))
-print ('\nThe  file proteins_output.fasta was generated with the longest protein for each sequence ID
+print ('\nThe  file proteins_output.fasta was generated with the longest protein for each sequence ID')
          
                     
