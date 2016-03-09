@@ -104,13 +104,13 @@ for ID in longest_orfs_dict:
     longest_proteins[ID]= str(dna_sequence.translate())
 
 # output the longest orf for each ID into a fasta file called proteins_output
-output_file = open("/Users/isabel/Desktop/proteins_output.fasta", "w")
+output_file = open("proteins_output.fasta", "w")
 for k in longest_proteins:
     output_file.write(">" + k + "\n" + longest_proteins[k] + "\n")
 output_file.close()
 
 # print stats on orf lengths
 print ('\nThe longest orf is for %s: %s (length = %i amino acids)' % (orf_max_ID,longest_proteins[orf_max_ID],orf_max_length))
-
+print ('\nThe  file proteins_output.fasta was generated with the longest protein for each sequence ID
          
                     
