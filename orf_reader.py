@@ -4,7 +4,7 @@
 
 # first open the file
 try:
-    file_name = open(sample_sequences.fasta','r')
+    file_name = open('/Users/isabel/Desktop/sample_sequences.fasta','r')
 except IOError:
     print ("Can't find your file")
 
@@ -25,7 +25,7 @@ List_of_sequence_names = list(seqs.keys())
 List_of_sequences = list(seqs.values())
 
 # print the # of entries in the fasta file
-print('There are %i entries in this fasta file' % len(List_of_sequence_names)) 
+print('\nThere are %i entries in this fasta file' % len(List_of_sequence_names)) 
 
 # now build list with lengths of all sequences
 List_of_lengths = []
@@ -48,10 +48,8 @@ for seq_name in List_of_sequence_names:
             min_names.append(seq_name)
 
 # print stats on sequence lengths
-print ('The longest sequence is %i bp long (%i sequence(s) of this length)' % (max_length, no_of_maxes))
-print ('Sequences with max length: %s' % (", ".join(max_names)))
-print ('The shortest sequence is %i bp long (%i sequence(s) of this length)' % (min_length, no_of_mins))
-print ('Sequences with min length: %s' % (", ".join(min_names)))
+print ('\nMax sequence length: %s bp, Sequences of this length: %s' % (max_length,", ".join(max_names)))
+print ('\nMin sequence length: %s bp, Sequences of this length: %s' % (min_length,", ".join(min_names)))
 
 # now use function GetORFs to identify all valid orfs in our dictionary in with reading frame = 1
 def GetORFs(dict_sequences, reading_frame = 1):
@@ -97,10 +95,6 @@ for seq_key in all_seq_orfs: #for every sequence ID
             orf_max_length = orf_length # set this length to the longest overall orf so far
             orf_max_ID = seq_key
 
- # print stats on orf lengths
-print ('The longest orf is %i bp long ' % orf_max_length)
-print ('Sequence with max orf length: %s' % orf_max_ID) 
-
 # translate the dna sequence for the longest orf for each ID to protein sequence
 from Bio.Seq import Seq
 from Bio.Alphabet import generic_dna
@@ -114,5 +108,9 @@ output_file = open("/Users/isabel/Desktop/proteins_output.fasta", "w")
 for k in longest_proteins:
     output_file.write(">" + k + "\n" + longest_proteins[k] + "\n")
 output_file.close()
+
+# print stats on orf lengths
+print ('\nThe longest orf is for %s: %s (length = %i amino acids)' % (orf_max_ID,longest_proteins[orf_max_ID],orf_max_length))
+
          
                     
