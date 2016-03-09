@@ -1,2 +1,14 @@
 # recurse_app
-The program orf_finder.py can be used to read in a multi-sequence fasta file.  It will generate statistics on this file, including the number of sequences, the longest and shortest sequences, and the lengths of these sequences.  It will also search for all valid open reading frames (orfs) in all the sequences, and report the sequence name of the sequence with the longest valid orf.  It will then take the longest valid orf for every sequence, translate the DNA sequence into protein sequence, and output a fasta file with the protein sequence of the longest valid orf for each input sequence (if one is present).   
+The program orf_finder.py will read a fasta file, generate several statistics, and output the longest orf sequences.  
+
+INPUT: 
+A multi-sequence fasta file (sample_sequences.fasta given here as example)
+
+OUTPUTS:
+Total # of sequences in fasta file
+Sequence IDs for longest and shortest sequences
+Lengths of longest and shortest sequences
+Sequence ID for longest valid open reading frame (orf)
+Fasta file with protein sequence for longest valid orf for each sequence ID
+
+   
